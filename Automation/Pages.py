@@ -28,14 +28,22 @@ class AccountPage(object):
         self.password = driver.find_element(*Locators.password_field)
         self.log_in = driver.find_element(*Locators.log_in_button)
 
-    def get_username_or_email_address(self):
-        return self.username_or_email_address
-    def get_password(self):
-        return self.password
-    def get_log_in(self):
-        return self.log_in
+    def set_username_or_email_address(self, username):
+        self.username_or_email_address.send_keys(username)
+
+    def set_password(self, password):
+        self.password.send_keys(password)
+
+    def click_log_in(self):
+        self.log_in.click()
+
     def get_invalid_username_error(self):
         return self.invalid_username_error
+
+    def log_in_process(self, username, password):
+        self.set_password(password)
+        self.set_username_or_email_address(username)
+        self.click_log_in()
 
 class AccountPageError(object):
     def __init__(self, driver):
