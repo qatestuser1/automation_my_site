@@ -1,12 +1,9 @@
-import unittest
-import sys
 from Registration import *
 from LogIn import *
 import unittest
 
 
 if __name__ == '__main__':
-    # Run only the tests in the specified classes
 
     test_classes_to_run = [LogIn, Registration]
 

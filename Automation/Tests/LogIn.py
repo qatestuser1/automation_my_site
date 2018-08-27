@@ -59,5 +59,5 @@ class LogIn(EnvironmentSettingUp):
         lost_password_error_page = Pages.Lost_password_error(self.driver)
         assert lost_password_error_page.get_lost_password_error_text() == "Invalid username or email."
 
-if __name__ == "__main__":
-    unittest.main()
+#if __name__ == "__main__":
+#    unittest.main()
