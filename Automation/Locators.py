@@ -50,6 +50,10 @@ class Locators(object):
 
 #After Registration page
     after_registration_title = (By.XPATH, '//*[@id="post-11"]/header/h1')
+#Registration Validation Errors Page
+    username_validation_error = (By.XPATH, '//*[@id="post-15"]/div/div/div/form/div[1]/div/div[1]/div[3]')
+    email_validation_error = (By.XPATH, '//*[@id="post-15"]/div/div/div/form/div[1]/div/div[4]/div[3]')
+    password_validation_error = (By.XPATH, '//*[@id="post-15"]/div/div/div/form/div[1]/div/div[5]/div[3]')
 #Blog page
 
 #Sample page
@@ -57,4 +61,6 @@ class Locators(object):
 #Lost password page
 
 #Search page
+    search_results_title = (By.XPATH, '//*[@id="main"]/header/h1')
+    search_results_info_box = (By.XPATH, '//*[@id="main"]/p')
 

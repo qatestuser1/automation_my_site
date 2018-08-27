@@ -1,6 +1,3 @@
-#random name
-#random email
-#random button?
 import random
 import string
 

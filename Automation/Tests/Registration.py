@@ -18,3 +18,13 @@ class Registration(EnvironmentSettingUp):
 
         after_registration_page = Pages.AfterRegistration(self.driver)
         assert after_registration_page.after_registration_title_text() == first_name + ' ' + last_name
+
+    def test_registration_empty_required_fields(self):
+        self.driver.get("https://qayanaautomation.ml/register/")
+        register_page = Pages.RegisterPage(self.driver)
+        register_page.click_register_button()
+
+        registration_validation_errors_page = Pages.RegistrationValidationErrorsPage(self.driver)
+        assert registration_validation_errors_page.get_username_validation_error_text() == "Username is required"
+        assert registration_validation_errors_page.get_email_validation_error_text() == "You must provide your email"
+        assert registration_validation_errors_page.get_password_validation_error_text() == "Password is required"

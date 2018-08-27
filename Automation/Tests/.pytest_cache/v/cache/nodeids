@@ -4,5 +4,7 @@
   "TestSuite.py::LogIn::test_log_in_success",
   "TestSuite.py::LogIn::test_lost_password_invalid_username_or_email",
   "TestSuite.py::LogIn::test_lost_password_success",
-  "TestSuite.py::Registration::test_registration_success"
+  "TestSuite.py::Registration::test_registration_empty_required_fields",
+  "TestSuite.py::Registration::test_registration_success",
+  "TestSuite.py::SearchProducts::test_search_products_invalid"
 ]

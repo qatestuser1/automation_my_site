@@ -1,5 +1,5 @@
 from Locators import *
-
+from selenium.webdriver.common.keys import Keys
 #Home page
 class HomePage(object):
     def __init__(self, driver):
@@ -8,6 +8,7 @@ class HomePage(object):
         self.register = driver.find_element(*Locators.register_link)
         self.blog = driver.find_element(*Locators.blog_link)
         self.sample_page = driver.find_element(*Locators.sample_page_link)
+        self.search = driver.find_element(*Locators.search_products_field)
 
     def get_my_account(self):
         return self.my_account
@@ -20,6 +21,11 @@ class HomePage(object):
 
     def get_sample_page(self):
         return self.sample_page
+
+    def perform_search(self, search_input):
+        self.search.send_keys(search_input)
+        self.search.send_keys(Keys.ENTER)
+
 
 #Shop page
 
@@ -158,6 +164,24 @@ class AfterRegistration(object):
 
     def after_registration_title_text(self):
         return self.after_registration.text
+
+
+class RegistrationValidationErrorsPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.username_required = driver.find_element(*Locators.username_validation_error)
+        self.email_required = driver.find_element(*Locators.email_validation_error)
+        self.password_required = driver.find_element(*Locators.password_validation_error)
+
+    def get_username_validation_error_text(self):
+        return self.username_required.text
+
+    def get_email_validation_error_text(self):
+        return self.email_required.text
+
+    def get_password_validation_error_text(self):
+        return self.password_required.text
+
 #Blog page
 
 #Sample page
@@ -165,3 +189,14 @@ class AfterRegistration(object):
 #Lost password page
 
 #Search page
+class SearchPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.search_results_info = driver.find_element(*Locators.search_results_info_box)
+        self.search_results_title = driver.find_element(*Locators.search_results_title)
+
+    def get_search_results_info_text(self):
+        return self.search_results_info.text
+
+    def get_search_results_title_text(self):
+        return self.search_results_title.text
