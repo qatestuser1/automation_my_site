@@ -40,7 +40,16 @@ class Locators(object):
 #My Account Dashboard page
     dashboard_text = (By.XPATH, '//*[@id="post-37"]/div/div/div/p[1]')
 #Register page
+    username_field = (By.ID, 'user_login-7')
+    first_name_field = (By.ID, 'first_name-7')
+    last_name_field = (By.ID, 'last_name-7')
+    email_address_field = (By.ID, 'user_email-7')
+    password_reg_field = (By.ID, 'user_password-7')
+    confirm_password_field = (By.ID, 'confirm_user_password-7')
+    register_button = (By.ID, 'um-submit-btn')
 
+#After Registration page
+    after_registration_title = (By.XPATH, '//*[@id="post-11"]/header/h1')
 #Blog page
 
 #Sample page

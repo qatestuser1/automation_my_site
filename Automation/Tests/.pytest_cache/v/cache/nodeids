@@ -1,7 +1,8 @@
 [
-  "LogIn.py::LogIn::test_log_in_invalid_credentials",
-  "LogIn.py::LogIn::test_log_in_invalid_password",
-  "LogIn.py::LogIn::test_log_in_success",
-  "LogIn.py::LogIn::test_lost_password_invalid_username_or_email",
-  "LogIn.py::LogIn::test_lost_password_success"
+  "TestSuite.py::LogIn::test_log_in_invalid_credentials",
+  "TestSuite.py::LogIn::test_log_in_invalid_password",
+  "TestSuite.py::LogIn::test_log_in_success",
+  "TestSuite.py::LogIn::test_lost_password_invalid_username_or_email",
+  "TestSuite.py::LogIn::test_lost_password_success",
+  "TestSuite.py::Registration::test_registration_success"
 ]
