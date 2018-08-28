@@ -5,7 +5,7 @@ from Functions import *
 import time
 
 class Shopping(EnvironmentSettingUp):
-    """
+
     def test_open_random_product_and_add_to_cart_and_order_with_cash(self):
         self.driver.get("https://qayanaautomation.ml/shop/")
 
@@ -38,7 +38,7 @@ class Shopping(EnvironmentSettingUp):
                                             '+380664322345', 'qa_test_mail@neo.com', 'Some notes...')
 
         check_out_page.click_on_place_order()
-    """
+
     def test_open_random_product_and_add_to_cart_and_order_with_pay_pal(self):
             self.driver.get("https://qayanaautomation.ml/shop/")
 
