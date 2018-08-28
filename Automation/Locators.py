@@ -40,6 +40,10 @@ class Locators(object):
     ]
 #Product page
     product_name_title = (By.CSS_SELECTOR, '.product_title.entry-title')
+    add_to_cart_button = (By.CSS_SELECTOR, '.single_add_to_cart_button.button.alt')
+#Product page after adding product to cart
+    added_to_cart_message = (By.CSS_SELECTOR, '.woocommerce-message')
+    view_cart_link = (By.CSS_SELECTOR, '.button.wc-forward')
 #Cart page
 
 #Checkout page

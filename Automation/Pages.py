@@ -67,9 +67,26 @@ class ProductPage(object):
     def __init__(self, driver):
         self.driver = driver
         self.product_name = driver.find_element(*Locators.product_name_title)
+        self.add_to_cart = driver.find_element(*Locators.add_to_cart_button)
 
     def get_product_name(self):
         return self.product_name.text
+
+    def add_product_to_cart(self):
+        self.add_to_cart.click()
+
+#Product page after adding product to cart
+class ProductPageAfterAddingToCart(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.added_to_cart_message = driver.find_element(*Locators.added_to_cart_message)
+        self.view_cart = driver.find_element(*Locators.view_cart_link)
+
+    def get_added_to_cart_message(self):
+        return self.added_to_cart_message.text
+
+    def click_view_cart(self):
+        self.view_cart.click()
 
 #Cart page
 

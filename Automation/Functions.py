@@ -16,5 +16,6 @@ def get_random_name(length):
 def generate_random_email(length):
     return get_random_name(length) + '@' + get_random_domain(domains)
 
+
 def get_random_in_list(list):
     return random.choice(list)
