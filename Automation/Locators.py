@@ -10,12 +10,12 @@ class Locators(object):
     cart_button = (By.CLASS_NAME, 'cart-contents')
 #Shop page
     products_add_to_cart_buttons = [
-        (By.XPATH, '//*[@id="main"]/ul/li[1]/a[2]'),
-        (By.XPATH, '//*[@id="main"]/ul/li[2]/a[2]'),
-        (By.XPATH, '//*[@id="main"]/ul/li[3]/a[2]'),
-        (By.XPATH, '//*[@id="main"]/ul/li[4]/a[2]'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[1]/a[2]'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[2]/a[2]'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[3]/a[2]'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[4]/a[2]'),
         (By.XPATH, '//*[@id="main"]/ul/li[5]/a[2]'),
-        (By.XPATH, '//*[@id="main"]/ul/li[6]/a[2]'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[6]/a[2]'),
         (By.XPATH, '//*[@id="main"]/ul/li[7]/a[2]'),
         (By.XPATH, '//*[@id="main"]/ul/li[8]/a[2]'),
         (By.XPATH, '//*[@id="main"]/ul/li[9]/a[2]'),
@@ -25,12 +25,12 @@ class Locators(object):
     ]
 
     products_names = [
-        (By.XPATH, '//*[@id="main"]/ul/li[1]/a[1]/h2'),
-        (By.XPATH, '//*[@id="main"]/ul/li[2]/a[1]/h2'),
-        (By.XPATH, '//*[@id="main"]/ul/li[3]/a[1]/h2'),
-        (By.XPATH, '//*[@id="main"]/ul/li[4]/a[1]/h2'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[1]/a[1]/h2'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[2]/a[1]/h2'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[3]/a[1]/h2'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[4]/a[1]/h2'),
         (By.XPATH, '//*[@id="main"]/ul/li[5]/a[1]/h2'),
-        (By.XPATH, '//*[@id="main"]/ul/li[6]/a[1]/h2'),
+        #(By.XPATH, '//*[@id="main"]/ul/li[6]/a[1]/h2'),
         (By.XPATH, '//*[@id="main"]/ul/li[7]/a[1]/h2'),
         (By.XPATH, '//*[@id="main"]/ul/li[8]/a[1]/h2'),
         (By.XPATH, '//*[@id="main"]/ul/li[9]/a[1]/h2'),
@@ -40,11 +40,19 @@ class Locators(object):
     ]
 #Product page
     product_name_title = (By.CSS_SELECTOR, '.product_title.entry-title')
+    product_quantity = (By.CSS_SELECTOR, '.input-text.qty.text')
     add_to_cart_button = (By.CSS_SELECTOR, '.single_add_to_cart_button.button.alt')
+    product_price_label = (By.CSS_SELECTOR, '.price')
 #Product page after adding product to cart
     added_to_cart_message = (By.CSS_SELECTOR, '.woocommerce-message')
     view_cart_link = (By.CSS_SELECTOR, '.button.wc-forward')
 #Cart page
+    cart_product = (By.CLASS_NAME, 'product-name')
+    cart_product_price = (By.CLASS_NAME, 'product-price')
+    cart_product_quantity = (By.CLASS_NAME, 'product-quantity')
+    cart_product_total = (By.CLASS_NAME, 'product-subtotal')
+
+    cart_subtotal = (By.CSS_SELECTOR, '.woocommerce-Price-amount.amount')
 
 #Checkout page
 

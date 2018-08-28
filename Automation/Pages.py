@@ -68,13 +68,21 @@ class ProductPage(object):
         self.driver = driver
         self.product_name = driver.find_element(*Locators.product_name_title)
         self.add_to_cart = driver.find_element(*Locators.add_to_cart_button)
+        self.quantity = driver.find_element(*Locators.product_quantity)
+        self.product_price = driver.find_element(*Locators.product_price_label)
 
     def get_product_name(self):
         return self.product_name.text
 
+    def get_product_price(self):
+        return self.product_price.text
+
     def add_product_to_cart(self):
         self.add_to_cart.click()
 
+    def set_product_quantity(self, quantity):
+        self.quantity.clear()
+        self.quantity.send_keys(quantity)
 #Product page after adding product to cart
 class ProductPageAfterAddingToCart(object):
     def __init__(self, driver):
@@ -89,6 +97,19 @@ class ProductPageAfterAddingToCart(object):
         self.view_cart.click()
 
 #Cart page
+class CartPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.product = driver.find_element(*Locators.cart_product) # returns "Product"
+        self.price = driver.find_element(*Locators.cart_product_price) # returns "Price"
+        self.quantity = driver.find_element(*Locators.cart_product_quantity) # returns "Quantity"
+        self.total = driver.find_element(*Locators.cart_product_total) # returns "Total"
+
+        self.subtotal = driver.find_element(*Locators.cart_subtotal)
+
+    def get_subtotal(self):
+        return self.subtotal.text
+
 
 #Checkout page
 
