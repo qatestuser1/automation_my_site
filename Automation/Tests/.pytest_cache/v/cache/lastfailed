@@ -1,4 +1,5 @@
 {
   "LogIn.py::LogIn::test_invalid_username_or_email": true,
-  "SearchProducts.py::SearchProducts::test_search_products_envalid": true
+  "SearchProducts.py::SearchProducts::test_search_products_envalid": true,
+  "Shopping.py::Shopping::test_add_to_cart": true
 }

@@ -1,5 +1,6 @@
 from Locators import *
 from selenium.webdriver.common.keys import Keys
+from Functions import *
 #Home page
 class HomePage(object):
     def __init__(self, driver):
@@ -28,6 +29,47 @@ class HomePage(object):
 
 
 #Shop page
+class ShopPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.products_add = []
+        self.products_names = []
+        self.added_product = ''
+        self.opened_product = ''
+        self.opened_product_name = ''
+
+        for product_add in Locators.products_add_to_cart_buttons:
+            self.products_add.append(driver.find_element(*product_add))
+
+        for product_name in Locators.products_names:
+            self.products_names.append(driver.find_element(*product_name))
+
+    def get_random_product_add(self):
+        return get_random_in_list(self.products_add)
+
+    def add_to_cart(self):
+        self.added_product = self.get_random_product_add()
+        self.added_product.click()
+
+    def get_random_product_name(self):
+        return get_random_in_list(self.products_names)
+
+    def open_product(self):
+        self.opened_product = self.get_random_product_name()
+        self.opened_product_name = self.opened_product.text
+        self.opened_product.click()
+
+    def get_opened_product_name(self):
+        return self.opened_product_name
+
+#Product page
+class ProductPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.product_name = driver.find_element(*Locators.product_name_title)
+
+    def get_product_name(self):
+        return self.product_name.text
 
 #Cart page
 

@@ -9,7 +9,37 @@ class Locators(object):
     search_products_field = (By.CLASS_NAME, 'search-field')
     cart_button = (By.CLASS_NAME, 'cart-contents')
 #Shop page
+    products_add_to_cart_buttons = [
+        (By.XPATH, '//*[@id="main"]/ul/li[1]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[2]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[3]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[4]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[5]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[6]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[7]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[8]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[9]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[10]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[11]/a[2]'),
+        (By.XPATH, '//*[@id="main"]/ul/li[12]/a[2]')
+    ]
 
+    products_names = [
+        (By.XPATH, '//*[@id="main"]/ul/li[1]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[2]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[3]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[4]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[5]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[6]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[7]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[8]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[9]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[10]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[11]/a[1]/h2'),
+        (By.XPATH, '//*[@id="main"]/ul/li[12]/a[1]/h2')
+    ]
+#Product page
+    product_name_title = (By.CSS_SELECTOR, '.product_title.entry-title')
 #Cart page
 
 #Checkout page
