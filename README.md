@@ -5,23 +5,23 @@ https://qayanaautomation.ml
 
 1. Login
 
-    1.2 Successful login
+    1.2 Successful login +
 
-    1.3 Invalid email
+    1.3 Invalid email +
 
-    1.4 Invalid password
+    1.4 Invalid password +
 
-    1.5 Forgot password with valid username or email
+    1.5 Forgot password with valid username or email +
 
-    1.6 Forgot password with invalid username or email
+    1.6 Forgot password with invalid username or email +
 
 2. Logout
 
 3. Registration
 
-    3.1 Successful registration
+    3.1 Successful registration +
 
-    3.2 Empty required fields (Username, E-mail Address, Password, Confirm Password)
+    3.2 Empty required fields (Username, E-mail Address, Password, Confirm Password) +
 
     3.3 Password that contains less than 8 characters
 
@@ -34,10 +34,16 @@ https://qayanaautomation.ml
     4.1 Buy a product with cash on delivery
 
     4.2 Buy a product with PayPal
+    
+    4.3 Buy more than one product
 
-    4.3 Apply coupon
+    4.4 Apply coupon
 
 5. Search products
+
+    5.1 Search existing product
+    
+    5.2 Search not existing product +
 
 6. Cart
 
@@ -46,3 +52,5 @@ https://qayanaautomation.ml
     6.2 Increase product quantity
 
     6.3 Remove product from cart
+
+7. Scroll Product page down
