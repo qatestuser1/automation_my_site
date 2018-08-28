@@ -53,10 +53,33 @@ class Locators(object):
     cart_product_total = (By.CLASS_NAME, 'product-subtotal')
 
     cart_subtotal = (By.CSS_SELECTOR, '.woocommerce-Price-amount.amount')
-
+    check_out_button = (By.CSS_SELECTOR, '.checkout-button.button.alt.wc-forward')
 #Checkout page
+    billing_first_name_field = (By.ID, 'billing_first_name')
+    billing_last_name_field = (By.ID, 'billing_last_name')
+    billing_company_field = (By.ID, 'billing_company')
+    billing_country_drop_down = (By.ID, 'select2-billing_country-container')
+    billing_country_search_field = (By.CLASS_NAME, 'select2-search__field')
+    billing_address1_field = (By.ID, 'billing_address_1')
+    billing_address2_field = (By.ID, 'billing_address_2')
+    billing_city_field = (By.ID, 'billing_city')
+    billing_county_optional_field = (By.ID, 'billing_state')
+    billing_post_code_field = (By.ID, 'billing_postcode')
+    billing_phone_field = (By.ID, 'billing_phone')
+    billing_email_field = (By.ID, 'billing_email')
+    order_comments_field = (By.ID, 'order_comments')
 
+    payment_method_pay_pal_radio = (By.CSS_SELECTOR, '.wc_payment_method.payment_method_paypal')
+
+
+    place_order_button = (By.ID, 'place_order')
 #PayPal page
+    pay_pal_email_field = (By.XPATH, '//*[@id="email"]')
+    pay_pal_password_field = (By.XPATH, '//*[@id="password"]')
+    pay_pal_sign_in_button = (By.XPATH, '//*[@id="btnLogin"]')
+
+    pay_pal_pay_now_button = (By.XPATH, '//*[@id="confirmButtonTop"]')
+#Order received & Order details page
 
 #About page
 

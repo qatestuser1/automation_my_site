@@ -1,6 +1,8 @@
 from Locators import *
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 from Functions import *
+import time
 #Home page
 class HomePage(object):
     def __init__(self, driver):
@@ -106,14 +108,89 @@ class CartPage(object):
         self.total = driver.find_element(*Locators.cart_product_total) # returns "Total"
 
         self.subtotal = driver.find_element(*Locators.cart_subtotal)
+        self.check_out = driver.find_element(*Locators.check_out_button)
 
     def get_subtotal(self):
         return self.subtotal.text
 
+    def proceed_to_check_out(self):
+        self.check_out.click()
+
 
 #Checkout page
+class CheckOutPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.billing_first_name = driver.find_element(*Locators.billing_first_name_field)
+        self.billing_last_name = driver.find_element(*Locators.billing_last_name_field)
+        self.billing_company = driver.find_element(*Locators.billing_company_field)
+        self.billing_country = driver.find_element(*Locators.billing_country_drop_down)
+        self.billing_address1 = driver.find_element(*Locators.billing_address1_field)
+        self.billing_address2 = driver.find_element(*Locators.billing_address2_field)
+        self.billing_city = driver.find_element(*Locators.billing_city_field)
+        self.billing_county_optional = driver.find_element(*Locators.billing_county_optional_field)
+        self.billing_post_code = driver.find_element(*Locators.billing_post_code_field)
+        self.billing_phone = driver.find_element(*Locators.billing_phone_field)
+        self.billing_email = driver.find_element(*Locators.billing_email_field)
+        self.order_comments = driver.find_element(*Locators.order_comments_field)
+        self.place_order = driver.find_element(*Locators.place_order_button)
+
+    def fill_billing_details(self, billing_first_name, billing_last_name,
+                             billing_company, billing_country, billing_address1,
+                             billing_address2, billing_city, billing_county_optional,
+                             billing_post_code, billing_phone, billing_email,
+                             order_comments):
+        self.billing_first_name.send_keys(billing_first_name)
+        self.billing_last_name.send_keys(billing_last_name)
+        self.billing_company.send_keys(billing_company)
+
+        self.billing_country.click()
+
+        billing_country_search = self.driver.find_element(*Locators.billing_country_search_field)
+        billing_country_search.send_keys(billing_country)
+        billing_country_search.send_keys(Keys.ENTER)
+
+        self.billing_address1.send_keys(billing_address1)
+        self.billing_address2.send_keys(billing_address2)
+        self.billing_city.send_keys(billing_city)
+        self.billing_county_optional.send_keys(billing_county_optional)
+        self.billing_post_code.send_keys(billing_post_code)
+        self.billing_phone.send_keys(billing_phone)
+        self.billing_email.send_keys(billing_email)
+        self.order_comments.send_keys(order_comments)
+
+    def select_pay_pal_payment(self):
+        payment_method_pay_pal = self.driver.find_element(*Locators.payment_method_pay_pal_radio)
+        payment_method_pay_pal.click()
+        time.sleep(3)
+
+    def click_on_place_order(self):
+        #time.sleep(3)
+        place_order = self.driver.find_element(*Locators.place_order_button)
+        place_order.click()
+
 
 #PayPal page
+class PayPalPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.pay_pal_email = driver.find_element(*Locators.pay_pal_email_field)
+        self.pay_pal_password = driver.find_element(*Locators.pay_pal_password_field)
+        self.pay_pal_sign_in = driver.find_element(*Locators.pay_pal_sign_in_button)
+
+    def pay_pal_sign_in_process(self, email, password):
+        self.pay_pal_email.clear()
+        self.pay_pal_email.send_keys(email)
+        #time.sleep(3)
+        self.pay_pal_password.clear()
+        self.pay_pal_password.send_keys(password)
+        self.pay_pal_sign_in.click()
+
+    def click_pay_now(self):
+        pay_pal_pay_now= self.driver.find_element(*Locators.pay_pal_pay_now_button)
+        pay_pal_pay_now.click()
+
+#Order received & Order details page
 
 #About page
 
