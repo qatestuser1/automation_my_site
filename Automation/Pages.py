@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from Functions import *
 import time
 #Home page
-class HomePage(object):
+class HomePage:
     def __init__(self, driver):
         self.driver = driver
         self.my_account = driver.find_element(*Locators.my_account_link)
@@ -32,7 +32,7 @@ class HomePage(object):
 
 
 #Shop page
-class ShopPage(object):
+class ShopPage:
     def __init__(self, driver):
         self.driver = driver
         self.products_add = []
@@ -66,7 +66,7 @@ class ShopPage(object):
         return self.opened_product_name
 
 #Product page
-class ProductPage(object):
+class ProductPage:
     def __init__(self, driver):
         self.driver = driver
         self.product_name = driver.find_element(*Locators.product_name_title)
@@ -87,7 +87,7 @@ class ProductPage(object):
         self.quantity.clear()
         self.quantity.send_keys(quantity)
 #Product page after adding product to cart
-class ProductPageAfterAddingToCart(object):
+class ProductPageAfterAddingToCart:
     def __init__(self, driver):
         self.driver = driver
         self.added_to_cart_message = driver.find_element(*Locators.added_to_cart_message)
@@ -100,7 +100,7 @@ class ProductPageAfterAddingToCart(object):
         self.view_cart.click()
 
 #Cart page
-class CartPage(object):
+class CartPage:
     def __init__(self, driver):
         self.driver = driver
         self.product = driver.find_element(*Locators.cart_product) # returns "Product"
@@ -119,7 +119,7 @@ class CartPage(object):
 
 
 #Checkout page
-class CheckOutPage(object):
+class CheckOutPage:
     def __init__(self, driver):
         self.driver = driver
         self.billing_first_name = driver.find_element(*Locators.billing_first_name_field)
@@ -176,7 +176,7 @@ class CheckOutPage(object):
 
 
 #PayPal page
-class PayPalPage(object):
+class PayPalPage:
     def __init__(self, driver):
         self.driver = driver
         self.pay_pal_email = driver.find_element(*Locators.pay_pal_email_field)
@@ -198,7 +198,7 @@ class PayPalPage(object):
         pay_pal_pay_now.click()
 
 #Order received & Order details page
-class OrderDetailsPage(object):
+class OrderDetailsPage:
     def __init__(self, driver):
         self.driver = driver
         self.order_number = driver.find_element(*Locators.order_number)
@@ -223,7 +223,7 @@ class OrderDetailsPage(object):
 #Contact page
 
 #My Account page
-class AccountPage(object):
+class AccountPage:
     def __init__(self, driver):
         self.driver = driver
         self.username_or_email_address = driver.find_element(*Locators.username_or_email_address_field)
@@ -251,7 +251,7 @@ class AccountPage(object):
     def lost_your_password(self):
         return self.forgot_password
 
-class AccountPageError(object):
+class AccountPageError:
     def __init__(self, driver):
         self.driver = driver
         self.invalid_username_error = driver.find_element(*Locators.invalid_username_error_text)
@@ -259,7 +259,7 @@ class AccountPageError(object):
     def get_invalid_username_error(self):
         return self.invalid_username_error.text
 
-class AccountLostPassword(object):
+class AccountLostPassword:
     def __init__(self, driver):
         self.driver = driver
         self.lost_username_or_email = driver.find_element(*Locators.lost_username_or_email_field)
@@ -275,7 +275,7 @@ class AccountLostPassword(object):
         self.set_lost_username_or_email(username_or_email)
         self.click_reset_password()
 
-class Lost_password_message(object):
+class Lost_password_message:
     def __init__(self, driver):
         self.driver = driver
         self.lost_password_message = driver.find_element(*Locators.lost_password_message)
@@ -283,7 +283,7 @@ class Lost_password_message(object):
         return self.lost_password_message.text
 
 
-class Lost_password_error(object):
+class Lost_password_error:
     def __init__(self, driver):
         self.driver = driver
         self.lost_password_error = driver.find_element(*Locators.lost_password_error)
@@ -291,7 +291,7 @@ class Lost_password_error(object):
         return self.lost_password_error.text
 
 #My Account Dashboard page
-class MyAccountDashboardPage(object):
+class MyAccountDashboardPage:
     def __init__(self, driver):
         self.driver = driver
         self.dashboard = driver.find_element(*Locators.dashboard_text)
@@ -299,7 +299,7 @@ class MyAccountDashboardPage(object):
     def get_dashboard(self):
         return self.dashboard
 #Register page
-class RegisterPage(object):
+class RegisterPage:
     def __init__(self, driver):
         self.driver = driver
         self.username = driver.find_element(*Locators.username_field)
@@ -340,7 +340,7 @@ class RegisterPage(object):
         self.set_confirm_password(confirm_password)
         self.click_register_button()
 
-class AfterRegistration(object):
+class AfterRegistration:
     def __init__(self, driver):
         self.driver = driver
         self.after_registration = driver.find_element(*Locators.after_registration_title)
@@ -349,7 +349,7 @@ class AfterRegistration(object):
         return self.after_registration.text
 
 
-class RegistrationValidationErrorsPage(object):
+class RegistrationValidationErrorsPage:
     def __init__(self, driver):
         self.driver = driver
         self.username_required = driver.find_element(*Locators.username_validation_error)
@@ -372,7 +372,7 @@ class RegistrationValidationErrorsPage(object):
 #Lost password page
 
 #Search page
-class SearchPage(object):
+class SearchPage:
     def __init__(self, driver):
         self.driver = driver
         self.search_results_info = driver.find_element(*Locators.search_results_info_box)
