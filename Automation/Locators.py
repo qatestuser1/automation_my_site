@@ -80,7 +80,11 @@ class Locators(object):
 
     pay_pal_pay_now_button = (By.XPATH, '//*[@id="confirmButtonTop"]')
 #Order received & Order details page
-
+    order_thank_you_message = (By.CSS_SELECTOR, '.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received')
+    order_number = (By.CSS_SELECTOR, '.woocommerce-order-overview__order.order')
+    order_date = (By.CSS_SELECTOR, '.woocommerce-order-overview__date.date')
+    order_total = (By.CSS_SELECTOR, '.woocommerce-order-overview__total.total')
+    order_payment_method = (By.CSS_SELECTOR, '.woocommerce-order-overview__payment-method.method')
 #About page
 
 #Contact page

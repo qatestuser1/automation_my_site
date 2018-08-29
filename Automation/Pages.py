@@ -1,6 +1,7 @@
 from Locators import *
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from Functions import *
 import time
 #Home page
@@ -93,7 +94,7 @@ class ProductPageAfterAddingToCart(object):
         self.view_cart = driver.find_element(*Locators.view_cart_link)
 
     def get_added_to_cart_message(self):
-        return self.added_to_cart_message.text
+        return self.added_to_cart_message.text.strip('View cart\n')
 
     def click_view_cart(self):
         self.view_cart.click()
@@ -160,13 +161,17 @@ class CheckOutPage(object):
         self.order_comments.send_keys(order_comments)
 
     def select_pay_pal_payment(self):
-        payment_method_pay_pal = self.driver.find_element(*Locators.payment_method_pay_pal_radio)
+        #payment_method_pay_pal = self.driver.find_element(*Locators.payment_method_pay_pal_radio)
+        payment_method_pay_pal = WebDriverWait(self.driver, 30).until(
+            EC.visibility_of_element_located(Locators.payment_method_pay_pal_radio))
         payment_method_pay_pal.click()
         time.sleep(3)
 
     def click_on_place_order(self):
         #time.sleep(3)
-        place_order = self.driver.find_element(*Locators.place_order_button)
+        #place_order = self.driver.find_element(*Locators.place_order_button)
+        place_order = WebDriverWait(self.driver, 30).until(
+            EC.visibility_of_element_located(Locators.place_order_button))
         place_order.click()
 
 
@@ -187,11 +192,32 @@ class PayPalPage(object):
         self.pay_pal_sign_in.click()
 
     def click_pay_now(self):
-        pay_pal_pay_now= self.driver.find_element(*Locators.pay_pal_pay_now_button)
+        #pay_pal_pay_now= self.driver.find_element(*Locators.pay_pal_pay_now_button)
+        pay_pal_pay_now = WebDriverWait(self.driver, 30).until(
+            EC.visibility_of_element_located(Locators.pay_pal_pay_now_button))
         pay_pal_pay_now.click()
 
 #Order received & Order details page
+class OrderDetailsPage(object):
+    def __init__(self, driver):
+        self.driver = driver
+        self.order_number = driver.find_element(*Locators.order_number)
+        self.order_date = driver.find_element(*Locators.order_date)
+        self.order_total = driver.find_element(*Locators.order_total)
+        self.order_payment_method = driver.find_element(*Locators.order_payment_method)
 
+    def get_order_number(self):
+        return self.order_number.text.strip('ORDER NUMBER:\n')
+
+    def get_order_date(self):
+        return self.order_date.text.strip('DATE:\n')
+
+    def get_order_total(self):
+        return self.order_total.text.strip('TOTAL:\n')
+
+    def get_order_payment_method(self):
+        #return self.order_payment_method.text.strip('PAYMENT METHOD:\n')
+        return self.order_payment_method.text[15:]
 #About page
 
 #Contact page

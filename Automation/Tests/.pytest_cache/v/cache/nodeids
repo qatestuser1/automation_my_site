@@ -1,3 +1,4 @@
 [
-  "Shopping.py::Shopping::test_open_random_product_and_add_to_cart"
+  "Shopping.py::Shopping::test_open_random_product_and_add_to_cart_and_order_with_cash",
+  "Shopping.py::Shopping::test_open_random_product_and_add_to_cart_and_order_with_pay_pal"
 ]

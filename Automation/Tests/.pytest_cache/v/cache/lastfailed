@@ -1,5 +1,9 @@
 {
   "LogIn.py::LogIn::test_invalid_username_or_email": true,
   "SearchProducts.py::SearchProducts::test_search_products_envalid": true,
-  "Shopping.py::Shopping::test_add_to_cart": true
+  "Shopping.py::EnvironmentSettingUp": true,
+  "Shopping.py::Shopping": true,
+  "Shopping.py::Shopping::test_add_to_cart": true,
+  "Shopping.py::Shopping::test_open_random_product_and_add_to_cart_and_order_with_pay_pal": true,
+  "Shopping.py::TestCase": true
 }
