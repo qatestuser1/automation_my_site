@@ -1,12 +1,3 @@
 [
-  "TestSuite.py::LogIn::test_log_in_invalid_credentials",
-  "TestSuite.py::LogIn::test_log_in_invalid_password",
-  "TestSuite.py::LogIn::test_log_in_success",
-  "TestSuite.py::LogIn::test_lost_password_invalid_username_or_email",
-  "TestSuite.py::LogIn::test_lost_password_success",
-  "TestSuite.py::Registration::test_registration_empty_required_fields",
-  "TestSuite.py::Registration::test_registration_success",
-  "TestSuite.py::SearchProducts::test_search_products_invalid",
-  "TestSuite.py::Shopping::test_open_random_product_and_add_to_cart_and_order_with_cash",
-  "TestSuite.py::Shopping::test_open_random_product_and_add_to_cart_and_order_with_pay_pal"
+  "Cart.py::Cart::test_hover_cart"
 ]

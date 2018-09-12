@@ -2,6 +2,7 @@ from Locators import *
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 from Functions import *
 import time
 #Home page
@@ -64,6 +65,18 @@ class ShopPage:
 
     def get_opened_product_name(self):
         return self.opened_product_name
+
+
+class CartWithProducts:
+    def __init__(self, driver):
+        self.driver = driver
+        self.cart = driver.find_element(*Locators.cart_content)
+
+    def hover_cart(self):
+        ActionChains(self.driver).move_to_element(self.cart).perform()
+
+    def click_on_view_cart_button(self):
+        self.driver.find_element(*Locators.view_cart_button).click()
 
 #Product page
 class ProductPage:

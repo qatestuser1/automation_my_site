@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-class Locators(object):
+class Locators:
 
 #Home page
     my_account_link = (By.LINK_TEXT, 'My account')
@@ -38,6 +38,11 @@ class Locators(object):
         (By.XPATH, '//*[@id="main"]/ul/li[11]/a[1]/h2'),
         (By.XPATH, '//*[@id="main"]/ul/li[12]/a[1]/h2')
     ]
+
+#Cart with products page
+    cart_content = (By.CSS_SELECTOR, '.cart-contents')
+    cart_content_list_first = (By.XPATH, '//*[@id="site-header-cart"]/li[2]/div[1]/div[1]/ul[1]/li[1]')
+    view_cart_button = (By.XPATH, '//*[@id="site-header-cart"]/li[2]/div/div/p[2]/a[1]')
 #Product page
     product_name_title = (By.CSS_SELECTOR, '.product_title.entry-title')
     product_quantity = (By.CSS_SELECTOR, '.input-text.qty.text')
