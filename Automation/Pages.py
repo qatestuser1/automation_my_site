@@ -138,6 +138,8 @@ class CartPage:
     def proceed_to_check_out(self):
         self.check_out.click()
 
+    def get_product_name(self):
+        return self.driver.find_element(*Locators.cart_product_name)
 
 #Checkout page
 class CheckOutPage:

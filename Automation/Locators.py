@@ -63,6 +63,7 @@ class Locators:
 
     cart_subtotal = (By.CSS_SELECTOR, '.woocommerce-Price-amount.amount')
     check_out_button = (By.CSS_SELECTOR, '.checkout-button.button.alt.wc-forward')
+    cart_product_name = (By.CSS_SELECTOR, '.product-name')
 #Checkout page
     billing_first_name_field = (By.ID, 'billing_first_name')
     billing_last_name_field = (By.ID, 'billing_last_name')

@@ -13,3 +13,5 @@ class Cart(EnvironmentSettingUp):
         time.sleep(10)
         cart_with_products_page.click_on_view_cart_button()
         time.sleep(10)
+        cart_page = Pages.CartPage(self.driver)
+        cart_page.get_product_name
