@@ -66,6 +66,14 @@ class ShopPage:
     def get_opened_product_name(self):
         return self.opened_product_name
 
+    def scroll_down_on_product_page(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    def get_product_name_on_alert(self):
+        return self.driver.find_element(*Locators.product_name_on_alert).text
+
+    def add_product_to_cart_via_alert(self):
+        self.driver.find_element(*Locators.add_to_cart_button_on_alert).click()
 
 class CartWithProducts:
     def __init__(self, driver):

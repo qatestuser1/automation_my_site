@@ -1,8 +1,7 @@
 import Pages
 from EnvironmentSetUp import *
-import unittest
-from Functions import *
 import time
+
 
 class Cart(EnvironmentSettingUp):
     def test_hover_cart(self):

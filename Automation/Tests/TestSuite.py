@@ -2,12 +2,13 @@ from Registration import *
 from LogIn import *
 from SearchProducts import *
 from Shopping import *
+from Cart import *
 import unittest
 
 
 if __name__ == '__main__':
 
-    test_classes_to_run = [LogIn, Registration, SearchProducts, Shopping]
+    test_classes_to_run = [LogIn, Registration, SearchProducts, Shopping, Cart]
 
     loader = unittest.TestLoader()
 

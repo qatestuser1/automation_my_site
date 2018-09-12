@@ -1,6 +1,5 @@
 import Pages
 from EnvironmentSetUp import *
-import unittest
 from Functions import *
 import time
 

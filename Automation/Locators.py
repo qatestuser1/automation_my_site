@@ -48,6 +48,10 @@ class Locators:
     product_quantity = (By.CSS_SELECTOR, '.input-text.qty.text')
     add_to_cart_button = (By.CSS_SELECTOR, '.single_add_to_cart_button.button.alt')
     product_price_label = (By.CSS_SELECTOR, '.price')
+
+    product_alert = (By.CSS_SELECTOR, '.storefront-sticky-add-to-cart__content')
+    product_name_on_alert = (By.XPATH, '//*[@id="page"]/section/div/div/div/span[1]/strong')
+    add_to_cart_button_on_alert = (By.CSS_SELECTOR, '.storefront-sticky-add-to-cart__content-button.button.alt')
 #Product page after adding product to cart
     added_to_cart_message = (By.CSS_SELECTOR, '.woocommerce-message')
     view_cart_link = (By.CSS_SELECTOR, '.button.wc-forward')
